@@ -89,8 +89,6 @@ npm run build
 
 **Bước 3:** Giữ nguyên **tất cả 4 mục đều tick** (Block all public access = ON) — vì sẽ chỉ cho CloudFront truy cập qua Origin Access Control, không truy cập trực tiếp bucket.
 
-![Cấu hình Block Public Access](/images/5-Workshop/5.10-frontend/block-public-access-config.png?featherlight=false&width=90pc)
-
 **Bước 4:** Bấm **Save changes**, gõ `confirm` vào ô xác nhận, bấm **Confirm**.
 
 ---
@@ -98,25 +96,40 @@ npm run build
 #### Phần 4: Tạo CloudFront Distribution
 
 **Bước 1:** Tại thanh tìm kiếm AWS Console, gõ `CloudFront`, chọn **CloudFront**.
-![alt text](/images/5-Workshop/5.10-frontend/4.1.png?featherlight=false&width=90pc)
+
+![Mở CloudFront Console](/images/5-Workshop/5.10-frontend/4.1-cloudfront-console.png?featherlight=false&width=90pc)
 
 **Bước 2:** Bấm nút cam **Create distribution**.
 
-**Bước 3:** Origin domain: bấm vào ô, chọn bucket `playwright-webui-xxx.s3.ap-southeast-1.amazonaws.com` từ danh sách gợi ý.  
-![alt text](/images/5-Workshop/5.10-frontend/4.3.png?featherlight=false&width=90pc)
+**Bước 3:** Origin domain: bấm vào ô, chọn bucket `playwright-webui-xxx.s3.ap-southeast-1.amazonaws.com` từ danh sách gợi ý.
+
+![Chọn Origin domain từ danh sách gợi ý](/images/5-Workshop/5.10-frontend/4.3-cloudfront-origin-domain.png?featherlight=false&width=90pc)
+
 **Bước 4:** Origin access: chọn **Origin access control settings (recommended)** → bấm **Create control setting** → giữ mặc định Signing behavior = **Sign requests (recommended)** → **Create**.
+
 **Bước 5:** Kéo xuống mục **Default root object**, điền `index.html`.
-![alt text](/images/5-Workshop/5.10-frontend/4.5.png?featherlight=false&width=90pc)
+
+![Thiết lập Default root object là index.html](/images/5-Workshop/5.10-frontend/4.5-cloudfront-default-root-object.png?featherlight=false&width=90pc)
+
 **Bước 6:** Các mục còn lại (Price class, WAF...) giữ mặc định, có thể đặt Name tùy ý (ví dụ `playwright-cloudfront-123`). Bấm **Create distribution**.
-![alt text](/images/5-Workshop/5.10-frontend/4.2.png?featherlight=false&width=90pc)
+
+![Tạo CloudFront Distribution thành công](/images/5-Workshop/5.10-frontend/4.6-cloudfront-create-distribution.png?featherlight=false&width=90pc)
+
 **Bước 7:** Xác nhận thông báo **"Successfully created new distribution"** — ghi lại **Distribution domain name** (ví dụ `d2qnbza21ik9r.cloudfront.net`), lúc này **Last modified** sẽ hiển thị trạng thái **Deploying**.
-![alt text](/images/5-Workshop/5.10-frontend/4.7.png?featherlight=false&width=90pc)
+
+![Distribution đang Deploying, ghi lại Domain Name](/images/5-Workshop/5.10-frontend/4.7-cloudfront-deploying.png?featherlight=false&width=90pc)
+
 **Bước 8:** Sau khi tạo xong, CloudFront hiện banner màu vàng: **"The S3 bucket policy needs to be updated"** → bấm **Copy policy**.
-![alt text](/images/5-Workshop/5.10-frontend/4.8.png?featherlight=false&width=90pc)
+
+![Banner cập nhật S3 Bucket Policy](/images/5-Workshop/5.10-frontend/4.8-cloudfront-update-s3-policy.png?featherlight=false&width=90pc)
+
 **Bước 9:** Mở tab mới, vào lại **S3 bucket** `playwright-webui-xxx` → tab **Permissions** → kéo xuống **Bucket policy** → bấm **Edit** → paste policy vừa copy vào → **Save changes**.
-![alt text](/images/5-Workshop/5.10-frontend/4.9.png?featherlight=false&width=90pc)
+
+![Paste policy vào S3 Bucket Policy](/images/5-Workshop/5.10-frontend/4.9-s3-bucket-policy-updated.png?featherlight=false&width=90pc)
+
 **Bước 10:** Quay lại **Cognito Console** → User pool `playwright-user-pool` → **App integration** → App client `playwright-app` → **Edit** → cập nhật **Callback URL(s)** thành CloudFront Domain Name (thay cho `http://localhost:3000` tạm thời ở mục 5.9) → **Save changes**.
-![alt text](/images/5-Workshop/5.10-frontend/4.10.png?featherlight=false&width=90pc)
+
+![Cập nhật Callback URL trong Cognito App Client](/images/5-Workshop/5.10-frontend/4.10-cognito-callback-url-updated.png?featherlight=false&width=90pc)
 
 ---
 
@@ -129,10 +142,13 @@ npm run build
 **Bước 3:** Copy **Domain Name** hiển thị trên Console, dạng `dxxxxxxxxxxxxx.cloudfront.net`.
 
 **Bước 4:** Mở Domain Name trên trình duyệt (tab ẩn danh để tránh cache), xác nhận Dashboard hiển thị đúng giao diện đăng nhập.
-![alt text](/images/5-Workshop/5.10-frontend/5.4.png?featherlight=false&width=90pc)
+
+![Dashboard hiển thị đúng giao diện đăng nhập](/images/5-Workshop/5.10-frontend/5.4-cloudfront-dashboard-login.png?featherlight=false&width=90pc)
+
 **Bước 5:** Thử truy cập trực tiếp URL S3 dạng `https://playwright-webui-xxx.s3.ap-southeast-1.amazonaws.com/index.html` — phải bị chặn, trả lỗi **403 Forbidden**.
 
-![alt text](/images/5-Workshop/5.10-frontend/5.5.png?featherlight=false&width=90pc)
+![Truy cập trực tiếp S3 bị chặn 403 Forbidden](/images/5-Workshop/5.10-frontend/5.5-s3-direct-403-forbidden.png?featherlight=false&width=90pc)
+
 ---
 
 #### Kiểm tra
@@ -142,6 +158,7 @@ npm run build
 - Đăng nhập thử bằng 1 trong 3 tài khoản test (Admin/QA/Developer) đã tạo ở mục 5.9, xác nhận đăng nhập thành công và gọi được API (không lỗi CORS/401).
 
 **Ghi chú:** CloudFront cache nội dung — nếu sửa Frontend build lại và upload mới mà không thấy thay đổi, vào CloudFront Console → chọn Distribution → tab **Invalidations** → **Create invalidation** → Object paths điền `/*` → **Create invalidation**.
+
 ---
 
-Ti?p theo, ch�ng ta s? chuy?n sang **[5.11. EventBridge](../5.11-eventbridge/)** d? c?u h�nh trigger x? l� b�o c�o t? d?ng.
+Tiếp theo, chúng ta sẽ chuyển sang **[5.11. EventBridge](../5.11-eventbridge/)** để cấu hình trigger xử lý báo cáo tự động.

@@ -1,4 +1,4 @@
----
+﻿---
 title : "AI API Key"
 date : 2026-06-19
 weight : 1
@@ -242,4 +242,4 @@ Sau khi hoàn thành phần này:
 - Dễ dàng thay đổi hoặc cập nhật API Key mà không cần chỉnh sửa mã nguồn.
 ---
 
-Ti?p theo, ch�ng ta s? chuy?n sang **[5.8.2. Th�ng b�o qua SES Email](../5.8.2-notification/)** d? c?u h�nh k�nh g?i email th�ng b�o.
+Tiếp theo, chúng ta sẽ chuyển sang **[5.8.2. Thông báo qua SES Email](../5.8.2-notification/)** để cấu hình kênh gửi email thông báo.

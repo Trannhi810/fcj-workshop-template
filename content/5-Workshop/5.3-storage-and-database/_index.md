@@ -1,4 +1,4 @@
-﻿---
+---
 title : "Storage & Database"
 date : 2026-07-10
 weight : 3
@@ -80,14 +80,14 @@ Since the Fargate container writes the `running/success/failed` status directly 
 
 **Step 16:** Replace `<account-id>` with the real Account ID (12 digits, shown in the top-right corner of the Console).
 
-**Step 17:** Name the policy, e.g. `SecretsManagerReadWrite`, click **Create policy**.
+**Step 17:** Name the policy, e.g. `DynamoDBWriteAccess`, click **Create policy**.
 
 ![Policy attached to the role](/images/5-Workshop/5.3-storage-and-database/10-inline-policy-attached.png?featherlight=false&width=90pc)
 
 #### Verification
 
 - All 4 tables show **Active** status in the Console.
-- `playwright-ecs-task-role` shows the inline policy `SecretsManagerReadWrite` in the Permissions tab.
+- `playwright-ecs-task-role` shows the inline policy `DynamoDBWriteAccess` in the Permissions tab.
 - After running a test: go to the `playwright-test-history` table → **Explore table items** tab → see a record with `status`, `report_url`, `ai_summary` all populated.
 
 ---

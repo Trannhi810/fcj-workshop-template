@@ -20,7 +20,7 @@ Thiết lập đăng nhập, phân quyền người dùng và cổng API cho Fro
 **Bước 2:** Bấm nút cam **Create user pool**.
 
 **Bước 3:** Ở trang **Configure sign-in experience**: mục Provider types giữ **Cognito user pool**; mục Sign-in options tick **Email**. Bấm **Next**.
-![alt text](/images/5-Workshop/5.9-api-gateway-and-auth/1.3.png?featherlight=false&width=90pc)
+![Cấu hình sign-in experience với Email](/images/5-Workshop/5.9-api-gateway-and-auth/1.3-cognito-configure-signin.png?featherlight=false&width=90pc)
 **Bước 4:** Ở trang **Configure security requirements**: mục Password policy chọn **Cognito defaults**; mục Multi-factor authentication chọn **No MFA**. Bấm **Next**.
 
 **Bước 5:** Ở trang **Configure sign-up experience**: mục Required attributes for sign-up, tick **email**. Các mục còn lại giữ mặc định. Bấm **Next**.
@@ -51,7 +51,7 @@ Thiết lập đăng nhập, phân quyền người dùng và cổng API cho Fro
 **Bước 3:** Bấm nút **Create group**.
 
 **Bước 4:** Điền Group name = `Admin`, các mục khác để trống, bấm **Create group**.
-![alt text](/images/5-Workshop/5.9-api-gateway-and-auth/2.4.png?featherlight=false&width=90pc)
+![Group Admin đã được tạo](/images/5-Workshop/5.9-api-gateway-and-auth/2.4-group-admin-created.png?featherlight=false&width=90pc)
 
 **Bước 5:** Bấm **Create group** lần nữa, điền Group name = `Developer`, bấm **Create group**.
 
@@ -74,7 +74,7 @@ Thiết lập đăng nhập, phân quyền người dùng và cổng API cho Fro
 **Bước 3:** Ở mục Invitation message: chọn **Don't send an invitation**.
 
 **Bước 4:** Điền Email address = `Admin-test@gmail.com`, tick **Mark email address as verified** nếu muốn bỏ qua bước xác thực email (không bắt buộc cho tài khoản test nội bộ).
-![alt text](/images/5-Workshop/5.9-api-gateway-and-auth/3.4.png?featherlight=false&width=90pc)
+![Điền thông tin tạo user Admin-test](/images/5-Workshop/5.9-api-gateway-and-auth/3.4-create-user-admin-test.png?featherlight=false&width=90pc)
 **Bước 5:** Đặt Temporary password (hoặc để Cognito tự sinh), bấm **Create user**.
 
 **Bước 6:** Lặp lại Bước 2-5 để tạo user `Dev-test@gmail.com`.
@@ -116,15 +116,15 @@ Thiết lập đăng nhập, phân quyền người dùng và cổng API cho Fro
 **Bước 2:** Menu bên trái bấm **APIs** → bấm nút cam **Create API**.
  
 **Bước 3:** Ở mục **HTTP API**, bấm **Build** (không chọn REST API — HTTP API đơn giản hơn và đủ dùng cho workshop này).
-![alt text](/images/5-Workshop/5.9-api-gateway-and-auth/5.3.png?featherlight=false&width=90pc)
+![Chọn HTTP API để Build](/images/5-Workshop/5.9-api-gateway-and-auth/5.3-api-gateway-http-build.png?featherlight=false&width=90pc)
 **Bước 4:** Ở trang **Create and configure integrations**: bấm **Add integration** → chọn **Lambda**.
  
 **Bước 5:** Ở dropdown Lambda function, chọn `playwright-api-backend`. Đặt **API name** = `playwright-api`. Bấm **Next**.
-![alt text](/images/5-Workshop/5.9-api-gateway-and-auth/Screenshot%202026-07-10%20220935.png?featherlight=false&width=90pc)
+![Chọn Lambda integration và đặt tên API](/images/5-Workshop/5.9-api-gateway-and-auth/5.5-api-integration-lambda.png?featherlight=false&width=90pc)
 **Bước 6:** Ở trang **Configure routes** (optional): Method chọn **POST**, Resource path điền `/trigger`, Integration target giữ nguyên `playwright-api-backend (Lambda)`. Bấm **Next**.
  
 **Bước 7:** Ở trang **Define stages** (optional): giữ mặc định Stage name = `$default`, Auto-deploy = **enabled**. Bấm **Next**.
-![alt text](/images/5-Workshop/5.9-api-gateway-and-auth/5.7.png?featherlight=false&width=90pc)
+![Cấu hình stage $default với Auto-deploy](/images/5-Workshop/5.9-api-gateway-and-auth/5.7-api-stages-default.png?featherlight=false&width=90pc)
 **Bước 8:** Ở trang **Review and create**, kiểm tra lại đúng 3 mục: **API name and integrations** (playwright-api, playwright-api-backend), **Routes** (POST /trigger → playwright-api-backend), **Stages** ($default, Auto-deploy: enabled). Bấm **Create**.
  
 ![Review and create trước khi tạo API](/images/5-Workshop/5.9-api-gateway-and-auth/7a-review-create-api.png?featherlight=false&width=90pc)
@@ -189,4 +189,4 @@ curl -X POST <invoke-url>/trigger -H "Authorization: Bearer <JWT>" -d '{"target_
 - Nếu bị lỗi 401 dù token hợp lệ, kiểm tra lại 2 giá trị ở Authorizer: **Issuer** phải đúng dạng `https://cognito-idp.ap-southeast-1.amazonaws.com/<user-pool-id>`, và **Audience** phải đúng App Client — sai 1 trong 2 sẽ luôn trả 401.
 ---
 
-Ti?p theo, ch�ng ta s? chuy?n sang **[5.10. Frontend](../5.10-frontend/)** d? tri?n khai Dashboard UI l�n S3 v� CloudFront.
+Tiếp theo, chúng ta sẽ chuyển sang **[5.10. Frontend](../5.10-frontend/)** để triển khai Dashboard UI lên S3 và CloudFront.

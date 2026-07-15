@@ -6,8 +6,6 @@ chapter : false
 pre : " <b> 5.8.2 </b> "
 ---
 
-
- 
 #### Phần 1: Verify email người gửi trên SES
  
 **Bước 1:** Vào **Amazon SES Console** (nhớ đúng region `ap-southeast-1`).
@@ -23,8 +21,6 @@ pre : " <b> 5.8.2 </b> "
 ![Tạo Verified Identity trên SES](/images/5-Workshop/5.8-secrets-and-notification/5.8.2-notification/1-create-identity.png?featherlight=false&width=90pc)
  
 **Bước 6:** AWS sẽ gửi 1 email xác nhận đến địa chỉ vừa nhập → mở hộp thư, bấm link **Verify** trong email đó.
-
-![Verify email](/images/5-Workshop/5.8-secrets-and-notification/5.8.2-notification/3-send-test-email-form.jpg?featherlight=false&width=90pc)
  
 **Bước 7:** Quay lại SES Console, refresh — status của identity phải chuyển từ **Pending verification** sang **Verified**.
  

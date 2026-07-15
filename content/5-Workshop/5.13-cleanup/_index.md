@@ -27,7 +27,7 @@ Content for this section will be updated with the full step-by-step cleanup guid
 5. **Amazon EventBridge** — delete the rule
 6. **Amazon ECS** — delete the Task Definition and Cluster
 7. **Amazon ECR** — delete the `playwright-runner` repository
-8. **Amazon SQS** — delete the queues `playwright-queue` and `playwright-dlq`
+8. **Amazon SQS** — delete the queues `playwright-task-queue` and `playwright-dlq`
 9. **AWS Secrets Manager** — delete the secret
 10. **Amazon SES** — remove verified identities (optional)
 11. **Amazon DynamoDB** — delete all 4 tables

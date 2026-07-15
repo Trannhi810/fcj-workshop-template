@@ -5,9 +5,6 @@ weight : 2
 chapter : false
 pre : " <b> 5.8.2 </b> "
 ---
-
-
- 
 #### Part 1: Verify the Sender Email in SES
  
 **Step 1:** Go to the **Amazon SES Console** (make sure you're in the `ap-southeast-1` region).
@@ -23,8 +20,6 @@ pre : " <b> 5.8.2 </b> "
 ![Create a Verified Identity in SES](/images/5-Workshop/5.8-secrets-and-notification/5.8.2-notification/1-create-identity.png?featherlight=false&width=90pc)
  
 **Step 6:** AWS sends a verification email to the address you just entered → open your inbox, click the **Verify** link in that email.
-
-![Verify email](/images/5-Workshop/5.8-secrets-and-notification/5.8.2-notification/3-send-test-email-form.jpg?featherlight=false&width=90pc)
  
 **Step 7:** Go back to the SES Console, refresh — the identity status should switch from **Pending verification** to **Verified**.
  

@@ -1,4 +1,4 @@
-﻿---
+---
 title : "Lambda Functions"
 date : 2026-07-10
 weight : 7
@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 5.7. </b> "
 ---
 
-### Overview
+#### Overview
 
 In this section, you will deploy four AWS Lambda functions that form the core orchestration layer of the serverless Playwright testing system. These functions handle API requests, coordinate ECS tasks, manage errors, and process post-test reports.
 
@@ -18,7 +18,7 @@ You will configure the following functions:
 
 ---
 
-### 1. Create `playwright-api-backend`
+#### 1. Create `playwright-api-backend`
 
 This function acts as the integration point for your API Gateway.
 
@@ -57,7 +57,7 @@ This function acts as the integration point for your API Gateway.
 
 ---
 
-### 2. Create `playwright-coordinator`
+#### 2. Create `playwright-coordinator`
 
 This function listens to the task queue and launches the ECS Fargate tasks.
 
@@ -90,7 +90,7 @@ This function listens to the task queue and launches the ECS Fargate tasks.
 
 ---
 
-### 3. Create `playwright-error-handler`
+#### 3. Create `playwright-error-handler`
 
 This function processes messages that fail to be processed by the coordinator.
 
@@ -112,7 +112,7 @@ This function processes messages that fail to be processed by the coordinator.
 
 ---
 
-### 4. Create `playwright-postprocessing`
+#### 4. Create `playwright-postprocessing`
 
 This function is triggered by EventBridge after an ECS task finishes. It processes execution logs, calls the OpenAI API for analysis, and sends email notifications via SES.
 
