@@ -72,7 +72,7 @@ This talk explored building multiplayer game functionality using AWS serverless 
 - **Godot Engine:** A lightweight, open-source game engine suitable for building 2D/3D games.
 - **AWS API Gateway WebSocket:** Enables persistent, bi-directional connections between client and server — unlike traditional HTTP's one-way request-response model.
 - **Serverless architecture:** API Gateway WebSocket → AWS Lambda → DynamoDB (storing connection state) — no dedicated game server needed, auto-scaling with the number of players.
-- **Live demo:** Multiple Godot clients connecting and synchronizing game state in real-time via WebSocket on AWS.
+- **Live demonstration:** Multiple Godot clients connected simultaneously and synchronized game state in real-time via WebSocket on AWS — however, the demo encountered some technical issues during the presentation, preventing the full workflow from being shown as intended.
 
 ---
 

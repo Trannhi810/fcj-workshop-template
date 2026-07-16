@@ -72,7 +72,7 @@ Bài trình bày khám phá cách xây dựng tính năng multiplayer cho game s
 - **Godot Engine:** Game engine mã nguồn mở, nhẹ và linh hoạt, phù hợp để xây dựng game 2D/3D.
 - **AWS API Gateway WebSocket:** Cho phép thiết lập kết nối hai chiều (bi-directional) liên tục giữa client và server, khác với HTTP truyền thống chỉ theo một chiều request-response.
 - **Kiến trúc serverless:** API Gateway WebSocket → AWS Lambda → DynamoDB (lưu trạng thái kết nối) — không cần quản lý server game riêng biệt, tự động mở rộng theo số lượng người chơi.
-- **Demo thực tế:** Minh họa nhiều Godot client kết nối và đồng bộ trạng thái game theo thời gian thực qua WebSocket trên AWS.
+- **Minh họa trực tiếp:** Nhiều Godot client được kết nối đồng thời và đồng bộ trạng thái game theo thời gian thực qua WebSocket trên AWS — tuy nhiên quá trình demo còn gặp một số trục trặc kỹ thuật, chưa thể hiện hết được toàn bộ luồng hoạt động như kỳ vọng.
 
 ---
 

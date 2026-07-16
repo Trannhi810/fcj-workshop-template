@@ -1,126 +1,102 @@
 ---
-title: "Event 1"
-date: 2024-01-01
+title: "Event: 1"
+date: 2026-05-09
 weight: 1
 chapter: false
 pre: " <b> 4.1. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy it verbatim** into your report, including this warning.
-{{% /notice %}}
-
-# Summary Report: “GenAI-powered App-DB Modernization workshop”
+# Summary Report: "AWS First Cloud AI Journey – FCAJ Community Day"
 
 ### Event Objectives
 
-- Share best practices in modern application design
-- Introduce Domain-Driven Design (DDD) and event-driven architecture
-- Provide guidance on selecting the right compute services
-- Present AI tools to support the development lifecycle
+- **Explore the "gamification" approach** to build motivation and sustain a consistent technology learning habit over the long term.
+- **Master Prompt Engineering techniques** from foundational to advanced levels, maximizing the capabilities of Large Language Models (LLMs).
+- **Study the serverless architecture model** on AWS through real-world projects and infrastructure cost optimization challenges.
+- **Adopt the BMAD Method** — bringing Agile development workflows and AI Agent teams directly into the IDE to standardize software development.
+
+---
 
 ### Speakers
 
-- **Jignesh Shah** – Director, Open Source Databases
-- **Erica Liu** – Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** – Assc. Specialist SA, Serverless Amazon Web Services
+- Speaker: **Huynh Hoang Long** – Admin of FCAJ
+- Speaker: **Nguyen Tuan Thinh** – DevOps/Cloud Engineer, First Cloud AI Journey
+- Speaker: **Khang**
+- Speaker: **Thao Nguyen** – GenAI Engineer, VIB
+
+---
 
 ### Key Highlights
 
-#### Identifying the drawbacks of legacy application architecture
+#### 1. Gamification: Building a Self-Driven Learning System
 
-- Long product release cycles → Lost revenue/missed opportunities  
-- Inefficient operations → Reduced productivity, higher costs  
-- Non-compliance with security regulations → Security breaches, loss of reputation  
+*Speaker: Huynh Hoang Long – Admin of FCAJ*
 
-#### Transitioning to modern application architecture – Microservices
+Core idea: Apply the dopamine-trigger mechanism of social media to learning. Instead of cramming, create a "reward loop" to trick the brain into enjoying the process.
 
-Migrating to a modular system — each function is an **independent service** communicating via **events**, built on three core pillars:
+Techniques applied:
 
-- **Queue Management**: Handle asynchronous tasks  
-- **Caching Strategy**: Optimize performance  
-- **Message Handling**: Flexible inter-service communication  
+- **Trigger the "fear of loss" psychology** by maintaining a continuous daily activity streak.
+- **Overcome initial procrastination** using the 2-Minute Rule (break goals into tiny steps to make starting easier).
+- **Set immediate rewards** after small milestones to create instant gratification.
 
-#### Domain-Driven Design (DDD)
+---
 
-- **Four-step method**: Identify domain events → arrange timeline → identify actors → define bounded contexts  
-- **Bookstore case study**: Demonstrates real-world DDD application  
-- **Context mapping**: 7 patterns for integrating bounded contexts  
+#### 2. Mastering LLM Output Quality with Automated Prompt Engineering
 
-#### Event-Driven Architecture
+*Speaker: Nguyen Tuan Thinh – DevOps/Cloud Engineer, First Cloud AI Journey*
 
-- **3 integration patterns**: Publish/Subscribe, Point-to-point, Streaming  
-- **Benefits**: Loose coupling, scalability, resilience  
-- **Sync vs async comparison**: Understanding the trade-offs  
+Core idea: Writing well-structured prompts not only improves output accuracy but also addresses the economics of AI usage (Token Economics).
 
-#### Compute Evolution
+- **Advanced techniques:** Using complex reasoning chains such as Chain-of-Thought (CoT) and branching with Tree of Thoughts (ToT).
+- **Practical architecture:** Introduced the system structure of the **Promtimizer** browser extension, built entirely on AWS services:
+  - Amazon S3 & CloudFront for the frontend.
+  - Authentication via Cognito.
+  - API Gateway & AWS Lambda for serverless logic.
+  - AI interaction via Amazon Bedrock and data storage in DynamoDB.
 
-- **Shared Responsibility Model**: EC2 → ECS → Fargate → Lambda  
-- **Serverless benefits**: No server management, auto-scaling, pay-for-value  
-- **Functions vs Containers**: Criteria for appropriate choice  
+---
 
-#### Amazon Q Developer
+#### 3. Shaping a Core Mindset for the AI Era
 
-- **SDLC automation**: From planning to maintenance  
-- **Code transformation**: Java upgrade, .NET modernization  
-- **AWS Transform agents**: VMware, Mainframe, .NET migration  
+*Speaker: Khang*
+
+Core idea: View AI as a capability amplifier (a force multiplier) — not a replacement for deep human understanding.
+
+- **Essential mindset:** Uphold integrity and a continuous learning spirit. Always dig into the fundamentals ("Why?") rather than relying on AI as a shortcut.
+- **Career development:** Aim for a career that balances passion, benefit, and responsibility. Start with small, focused goals while maintaining a long-term vision, and always value the power of teamwork.
+
+---
+
+#### 4. The BMAD Method: A Context Engineering Revolution in the IDE
+
+*Speaker: Thao Nguyen – GenAI Engineer, VIB*
+
+Core idea: Replace "Vibe Coding" habits (cramming everything into one chat window causing context overload) with disciplined **Context Engineering** backed by clear system design.
+
+Workflow:
+
+- **Sharding:** Break down PRD documents and architecture specs into ultra-compact "Index Chunks." The AI only loads the context it needs, preventing hallucinations.
+- **Shift to an Agile model** with specialized AI Agents (PM, PO, Dev, Reviewer) executing individual Stories, running continuous test loops directly inside the IDE.
+
+---
 
 ### Key Takeaways
 
-#### Design Mindset
+The event delivered two major lessons. The first was how to overcome personal inertia through self-reward techniques and goal decomposition — making knowledge acquisition feel engaging like a game rather than a burden. The second was a broadened understanding of professional AI workflows through the BMAD method, reinforcing that effective AI usage requires a disciplined strategy of context fragmentation and system-level context management.
 
-- **Business-first approach**: Always start from the business domain, not the technology  
-- **Ubiquitous language**: Importance of a shared vocabulary between business and tech teams  
-- **Bounded contexts**: Identifying and managing complexity in large systems  
-
-#### Technical Architecture
-
-- **Event storming technique**: Practical method for modeling business processes  
-- Use **event-driven communication** instead of synchronous calls  
-- **Integration patterns**: When to use sync, async, pub/sub, streaming  
-- **Compute spectrum**: Criteria for choosing between VM, containers, and serverless  
-
-#### Modernization Strategy
-
-- **Phased approach**: No rushing — follow a clear roadmap  
-- **7Rs framework**: Multiple modernization paths depending on the application  
-- **ROI measurement**: Cost reduction + business agility  
+---
 
 ### Applying to Work
 
-- **Apply DDD** to current projects: Event storming sessions with business teams  
-- **Refactor microservices**: Use bounded contexts to define service boundaries  
-- **Implement event-driven patterns**: Replace some sync calls with async messaging  
-- **Adopt serverless**: Pilot AWS Lambda for suitable use cases  
-- **Try Amazon Q Developer**: Integrate into the dev workflow to boost productivity  
+In practice, the gamification framework shared by Hoang Long will be applied immediately to maintain a consistent daily work rhythm. As for the BMAD method, it is an ideal framework for building web applications. Instead of dumping entire codebases into an AI chat window, modules such as Node.js/Express logic handling and MongoDB schema definitions will be broken into fully independent contexts. Even when designing complex Spring Boot backend services or writing automated test scripts with Postman and Playwright, managing documentation through a sharding structure will enable the AI to generate more accurate code and test cases — significantly reducing overall development time.
+
+---
 
 ### Event Experience
 
-Attending the **“GenAI-powered App-DB Modernization”** workshop was extremely valuable, giving me a comprehensive view of modernizing applications and databases using advanced methods and tools. Key experiences included:
+#### Event Photos
 
-#### Learning from highly skilled speakers
-- Experts from AWS and major tech organizations shared **best practices** in modern application design.  
-- Through real-world case studies, I gained a deeper understanding of applying **DDD** and **Event-Driven Architecture** to large projects.  
+*Add your event photos here*
 
-#### Hands-on technical exposure
-- Participating in **event storming** sessions helped me visualize how to **model business processes** into domain events.  
-- Learned how to **split microservices** and define **bounded contexts** to manage large-system complexity.  
-- Understood trade-offs between **synchronous and asynchronous communication** and integration patterns like **pub/sub, point-to-point, streaming**.  
-
-#### Leveraging modern tools
-- Explored **Amazon Q Developer**, an AI tool for SDLC support from planning to maintenance.  
-- Learned to **automate code transformation** and pilot serverless with **AWS Lambda** to improve productivity.  
-
-#### Networking and discussions
-- The workshop offered opportunities to exchange ideas with experts, peers, and business teams, enhancing the **ubiquitous language** between business and tech.  
-- Real-world examples reinforced the importance of the **business-first approach** rather than focusing solely on technology.  
-
-#### Lessons learned
-- Applying DDD and event-driven patterns reduces **coupling** while improving **scalability** and **resilience**.  
-- Modernization requires a **phased approach** with **ROI measurement**; rushing the process can be risky.  
-- AI tools like Amazon Q Developer can significantly **boost productivity** when integrated into the current workflow.  
-
-#### Some event photos
-*Add your event photos here*  
-
-> Overall, the event not only provided technical knowledge but also helped me reshape my thinking about application design, system modernization, and cross-team collaboration.
+Walking into a large community event for the first time was initially daunting and nerve-wracking. However, the open and welcoming atmosphere, combined with the genuine and practical insights shared by the speakers, quickly dispelled any anxiety. Attending in person and listening directly provided inspiration and value far beyond what any written material could offer at home. This experience is a strong motivator to confidently participate, learn, and engage more actively in future technology events.

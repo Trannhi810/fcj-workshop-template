@@ -10,7 +10,7 @@ pre: " <b> 4.4. </b> "
 
 ### Event Objectives
 
-The **FCAJ Community Day** (June 2026) was organized with the following key goals:
+The **FCAJ Community Day** (27/6/2026) was organized with the following key goals:
 
 - **Share career insights** and hands-on experience in operating cloud infrastructure, addressing technical debt challenges in the AI era.
 - **Introduce Voice AI architectures** tailored for the Vietnamese language in large enterprise environments (finance, banking).
@@ -25,24 +25,19 @@ The **FCAJ Community Day** (June 2026) was organized with the following key goal
 The workshop was structured into **5 independent sessions**, following a collaborative team presentation model, with a total of **9 speakers** (some speakers participated in two sessions):
 
 **Session 1 – AI Applications in Cloud Infrastructure Operations & Monitoring**
-- **Steve Trần** *(Founder – Cloud Thinker)*
+- Speaker: **Steve Trần** – Founder of Cloud Thinker *(Former Solution Architect at AWS)*
 
 **Session 2 – AI Voice Agent Solutions for Enterprises**
-- **Hiếu Nghị** *(moderator – Renova Cloud)*
-- **Kiệt** *(Live Demo – AWS Study Group)*
-- **Trung** *(technical solution – Founder & CEO, R AI)*
+- Speakers: **Hiếu Nghị** *(Renova Cloud)*, **Kiệt** *(AWS Study Group)*, and **Trung** – Founder & CEO *(R AI)*
 
 **Session 3 – DevOps AI Agent Virtual Assistant on AWS**
-- **Nguyên Nguyễn** *(theoretical foundation – Cloud Kinetic)*
-- **Bảo** *(Live Demo – Cloud Kinetic)*
+- Speakers: **Nguyên Nguyễn** and **Bảo** – Cloud Engineers from *(Cloud Kinetic)*
 
 **Session 4 – AI-Powered Recruitment & HR Management with Amazon Q**
-- **Minh Anh** *(problem framing – Noventic)*
-- **Trường / Wynn** *(solution & Demo – Noventic)*
+- Speakers: **Minh Anh** and **Trường / Wynn** *(Noventic)*
 
 **Session 5 – Secure Private Connection Setup for Amazon Q via MCP Server**
-- **Hiếu Nghị** *(moderator – Renova Cloud)*
-- **Toàn Nguyễn** *(architecture & Demo – AWS Security Builder)*
+- Speakers: **Hiếu Nghị** *(Renova Cloud)* and **Toàn Nguyễn** *(AWS Security Builder)*
 
 ---
 
@@ -63,7 +58,7 @@ Steve opened the workshop by painting a comprehensive picture of the challenges 
 
 #### Session 2 – AI Voice Agent Solutions for Enterprises
 
-*Speakers: Hiếu Nghị (Renova Cloud) – moderator | Kiệt (AWS Study Group) – Live Demo | Trung (R AI) – technical solution*
+*Speakers: Hiếu Nghị (Renova Cloud) | Kiệt (AWS Study Group) | Trung – Founder & CEO (R AI)*
 
 This session addressed the unique challenges of the Vietnamese language and the architecture for solving enterprise-grade Voice AI problems:
 
@@ -71,13 +66,13 @@ This session addressed the unique challenges of the Vietnamese language and the 
 - **Optimal architecture:** Shifted to a **3-component pipeline**: **Speech-to-Text → LLM → Text-to-Speech**. This approach gives enterprises control over text-form output before voice synthesis, ensuring accuracy and data security (suitable for banks like VIB and VPBank).
 - **Real-time optimization:** **Streaming** voice data continuously into text and feeding it directly to the LLM for immediate voice responses, eliminating waiting time.
 - **Localized context handling:** Integrated an ML filter to automatically detect speaker gender (for appropriate salutation: "Anh"/"Chị") and an AI model to recognize intelligent pause patterns, preventing the agent from interrupting customers mid-sentence.
-- **Live Demo:** Tested a Voice Agent built on **AWS Bedrock** combined with a **Knowledge Base** to automatically answer in English with detailed technical specifications about Apple MacBook products.
+- **Live demonstration:** Tested a Voice Agent built on **AWS Bedrock** combined with a **Knowledge Base** to automatically answer detailed technical product specifications — however, the demo encountered some technical issues during the live presentation.
 
 ---
 
 #### Session 3 – DevOps AI Agent Virtual Assistant on AWS
 
-*Speakers: Nguyên Nguyễn (theoretical foundation) | Bảo (Live Demo) – Cloud Kinetic*
+*Speakers: Nguyên Nguyễn | Bảo – Cloud Kinetic*
 
 This session presented an automated incident response solution for DevOps/SRE engineers:
 
@@ -96,7 +91,7 @@ This session presented an automated incident response solution for DevOps/SRE en
 
 #### Session 4 – AI-Powered Recruitment & HR Management with Amazon Q
 
-*Speakers: Minh Anh (HR problem framing) | Trường / Wynn (solution & Demo) – Noventic*
+*Speakers: Minh Anh | Trường / Wynn – Noventic*
 
 This session focused on applying AI to enterprise HR and recruitment workflows:
 
@@ -108,7 +103,7 @@ This session focused on applying AI to enterprise HR and recruitment workflows:
 
 #### Session 5 – Secure Private Connection Setup for Amazon Q via MCP Server
 
-*Speakers: Hiếu Nghị (Renova Cloud) – moderator | Toàn Nguyễn (AWS Security Builder) – architecture & Demo*
+*Speakers: Hiếu Nghị (Renova Cloud) | Toàn Nguyễn (AWS Security Builder)*
 
 The final session addressed advanced security for AI Agent systems in enterprise environments:
 
@@ -141,8 +136,8 @@ The final session addressed advanced security for AI Agent systems in enterprise
 ### Applying to Work
 
 - **Apply to learning and projects:** Build or integrate a basic monitoring system (AWS CloudWatch) with simple AI Agents to get hands-on experience with log analysis and automated error detection workflows.
-- **Optimize your resume (CV):** Knowing that HR teams now use AI (like Amazon Q) to automatically screen and rank CVs by weighted criteria — focus on writing clearly structured CVs with skills and keywords closely aligned to Job Descriptions to improve screening pass rates.
 - **Practice Private network deployments:** Set up a cloud lab environment, configure an MCP Server entirely within a Private Subnet, and connect via VPC Endpoint to deeply understand routing mechanisms and internal DNS resolution.
+- **Explore Amazon Q and MCP:** Learn how to build a knowledge base, configure instructions for an AI Agent, and integrate with internal services via MCP Actions — applicable to a wide range of real-world automation tasks.
 - **Experiment with advanced AI tools:** Take advantage of free trials from technology vendors to build custom skills (using Markdown/Python files) for real tasks such as summarizing internal documents, reviewing policies, or generating automated reports to boost personal productivity.
 
 ---
