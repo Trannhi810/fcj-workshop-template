@@ -49,7 +49,7 @@ Great support policies, flexible hours, and valuable internal training sessions.
   More career sharing sessions from senior professionals would be highly appreciated.
 
 - **Would you like to continue this program in the future?**  
-  Having recently completed my university studies, my current plan is to dedicate my time to improving my English and pursuing professional certifications for a career in Software Testing. Nevertheless, the experience gained at FCJ will always be a valuable asset to me.
+  My current plan is to dedicate my time to improving my English and pursuing professional certifications for a career in Software Testing. Nevertheless, the experience gained at FCJ will always be a valuable asset to me.
 
 - **Any other comments:**  
   Thank you to the FCJ team and AWS Vietnam for providing me with such a meaningful internship opportunity.
