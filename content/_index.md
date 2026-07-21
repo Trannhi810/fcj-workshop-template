@@ -8,9 +8,6 @@ chapter: false
     
 # Internship Report
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
 ### Student Information:
 &emsp; **Full Name:** Tran Dao Phuong Nhi
@@ -23,15 +20,15 @@ chapter: false
 
 &emsp; **Major:** Information Technology
 
-&emsp; **Class:** AWS0?
+&emsp; **Class:** 22DTHE2
 
 &emsp; **Internship Company:** Amazon Web Services Vietnam Co., Ltd.
 
 &emsp; **Internship Position:** FCJ Cloud Intern
 
-&emsp; **Internship Duration:** From 12/04/2025 to 12/07/2025
+&emsp; **Internship Duration:** From 17/04/2025 to 30/07/2025
 
-![Your profile picture](/images/avatar.png)
+![Your profile picture](/images/avatar.jpg?featherlight=false&width=22pc)
 
 ### Report Content
 
