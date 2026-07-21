@@ -144,6 +144,12 @@ An inspiring career development story from within the IT industry:
 
 ### Event Experience
 
+The June Meetup stood out for its breadth of topics — from containerization fundamentals with Docker and combining AWS WAF with ML for threat detection, to building GraphRAG systems with AWS Neptune and an inspiring career story of self-learning from IT Helpdesk to Cloud/DevOps. Each talk was rooted in real-world problems, helping me better understand which skills to prioritize on my own Cloud learning path.
+
 #### Event Photos
 
-*Add your event photos here*
+![Talk 2 – System Architecture with AWS WAF and ML](/images/4-Event/Event3/talk2-waf-ml-system-architecture.jpg?featherlight=false&width=60pc)
+
+![Talk 6 – Vinh Trần’s Interview Journey at Central Retail](/images/4-Event/Event3/talk6-interview-journey-central-retail.jpg?featherlight=false&width=60pc)
+
+![Talk 6 – Roadmap from IT Helpdesk to Sysadmin](/images/4-Event/Event3/talk6-helpdesk-to-sysadmin-roadmap.jpg?featherlight=false&width=60pc)

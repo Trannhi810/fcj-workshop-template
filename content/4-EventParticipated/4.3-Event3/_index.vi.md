@@ -144,6 +144,12 @@ Bài chia sẻ truyền cảm hứng về hành trình phát triển nghề nghi
 
 ### Trải Nghiệm Trong Event
 
+Buổi meetup tháng 6 nổi bật với sự đa dạng về chủ đề — từ nền tảng container hóa với Docker, kết hợp AWS WAF với ML để phát hiện tấn công, cho đến kiến trúc GraphRAG bằng AWS Neptune và câu chuyện tự học từ IT Helpdesk lên Cloud/DevOps. Mỗi bài chia sẻ đều gắn với bài toán thực tiễn, giúp em thấy rõ hơn các kỹ năng nào cần ưu tiên trong lộ trình học Cloud của bản thân.
+
 #### Một Số Hình Ảnh Khi Tham Gia Sự Kiện
 
-*Thêm các hình ảnh của bạn tại đây*
+![Bài 2 – Kiến trúc System Architecture với AWS WAF và ML](/images/4-Event/Event3/talk2-waf-ml-system-architecture.jpg?featherlight=false&width=60pc)
+
+![Bài 6 – Hành trình phỏng vấn của Vinh Trần tại Central Retail](/images/4-Event/Event3/talk6-interview-journey-central-retail.jpg?featherlight=false&width=60pc)
+
+![Bài 6 – Lộ trình tự học từ IT Helpdesk lên Sysadmin](/images/4-Event/Event3/talk6-helpdesk-to-sysadmin-roadmap.jpg?featherlight=false&width=60pc)

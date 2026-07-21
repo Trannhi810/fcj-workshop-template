@@ -95,8 +95,13 @@ In practice, the gamification framework shared by Hoang Long will be applied imm
 
 ### Event Experience
 
+Walking into a large community event for the first time was initially daunting and nerve-wracking. However, the open and welcoming atmosphere, combined wth the genuine and practical insights shared by the speakers, quickly dispelled any anxiety. Attending in person and listening directly provided inspiration and value far beyond what any written material could offer at home. This experience is a strong motivator to confidently participate, learn, and engage more actively in future technology events.
+
+
 #### Event Photos
 
-*Add your event photos here*
+![Talk 2 – Promtimizer Solution Architecture on AWS](/images/4-Event/Event1/talk2-promtimizer-solution-architecture.jpg?featherlight=false&width=60pc)
 
-Walking into a large community event for the first time was initially daunting and nerve-wracking. However, the open and welcoming atmosphere, combined with the genuine and practical insights shared by the speakers, quickly dispelled any anxiety. Attending in person and listening directly provided inspiration and value far beyond what any written material could offer at home. This experience is a strong motivator to confidently participate, learn, and engage more actively in future technology events.
+![Talk 4 – BMAD Pipeline: From Brainstorm to Production Code](/images/4-Event/Event1/talk4-bmad-pipeline-brainstorm-to-production.jpg?featherlight=false&width=60pc)
+
+![Talk 4 – BMAD Method vs Vibe Coding – Context Engineering](/images/4-Event/Event1/talk4-bmad-vs-vibe-coding-context-engineering.jpg?featherlight=false&width=60pc)

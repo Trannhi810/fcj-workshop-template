@@ -95,8 +95,12 @@ Về mặt thực tiễn, sẽ áp dụng ngay cơ chế "trò chơi hóa" của
 
 ### Trải Nghiệm Trong Event
 
+Ban đầu bước vào một sự kiện cộng đồng đông đúc khiến khá rụt rè và e ngại. Tuy nhiên, bầu không khí cởi mở và những chia sẻ tâm huyết, thực tế từ các anh chị diễn giả đã hoàn toàn gạt bỏ sự lo lắng đó. Việc đến tận nơi, lắng nghe trực tiếp mang lại cảm hứng và giá trị lớn hơn rất nhiều so với việc chỉ đọc tài liệu ở nhà. Đây chắc chắn là động lực để tự tin tham gia, học hỏi và tương tác nhiều hơn trong các sự kiện công nghệ sắp tới.
+
 #### Một Số Hình Ảnh Khi Tham Gia Sự Kiện
 
-*Thêm các hình ảnh của bạn tại đây*
+![Bài 2 – Solution Architecture của Promtimizer trên AWS](/images/4-Event/Event1/talk2-promtimizer-solution-architecture.jpg?featherlight=false&width=60pc)
 
-Ban đầu bước vào một sự kiện cộng đồng đông đúc khiến khá rụt rè và e ngại. Tuy nhiên, bầu không khí cởi mở và những chia sẻ tâm huyết, thực tế từ các anh chị diễn giả đã hoàn toàn gạt bỏ sự lo lắng đó. Việc đến tận nơi, lắng nghe trực tiếp mang lại cảm hứng và giá trị lớn hơn rất nhiều so với việc chỉ đọc tài liệu ở nhà. Đây chắc chắn là động lực để tự tin tham gia, học hỏi và tương tác nhiều hơn trong các sự kiện công nghệ sắp tới.
+![Bài 4 – BMAD Pipeline: Từ Brainstorm đến Production Code](/images/4-Event/Event1/talk4-bmad-pipeline-brainstorm-to-production.jpg?featherlight=false&width=60pc)
+
+![Bài 4 – BMAD Method vs Vibe Coding – Context Engineering](/images/4-Event/Event1/talk4-bmad-vs-vibe-coding-context-engineering.jpg?featherlight=false&width=60pc)

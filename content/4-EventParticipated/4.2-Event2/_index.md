@@ -96,8 +96,15 @@ Additionally, the "programming marathon" spirit of Hackathons is an ideal framew
 
 ### Event Experience
 
+The atmosphere of the second session was vibrant and captivating. The mix of hard technical solutions like Cloud emulation, the passionate intensity of Hackathons, and the fresh perspective from the Tử Vi Đại Việt project created a remarkably well-rounded workshop. Witnessing the tangible products built by the speakers was incredibly inspiring, motivating me to enhance my personal projects and embrace new challenges.
+
+
 #### Event Photos
 
-*Add your event photos here*
+![Talk 1 – Effective Practical Learning Roadmap: AWS Cloud Quest & Floci](/images/4-Event/Event2/talk1-effective-practical-learning-roadmap.jpg?featherlight=false&width=60pc)
 
-The atmosphere of the second session was distinctly energetic and engaging. The blend of hard technical solutions like Cloud emulation with the intense spirit of Hackathons, and the fresh perspective from the Tử Vi Đại Việt project, made the workshop feel remarkably well-balanced. Seeing the real products built by the speakers was a source of great inspiration and motivation to keep upgrading personal projects and take on new challenges.
+![Talk 2 – Hackathon: Build a Prototype in 24–48 Hours](/images/4-Event/Event2/talk2-hackathon-build-prototype-in-24-48h.jpg?featherlight=false&width=60pc)
+
+![Talk 4 – Tử Vi Đại Việt – AI-Powered Vietnamese Astrology Platform](/images/4-Event/Event2/talk4-tu-vi-dai-viet-ai-powered.jpg?featherlight=false&width=60pc)
+
+![Talk 5 – The Hidden Iceberg: DevOps Before Disaster](/images/4-Event/Event2/talk5-hidden-iceberg-devops-before-disaster.jpg?featherlight=false&width=60pc)

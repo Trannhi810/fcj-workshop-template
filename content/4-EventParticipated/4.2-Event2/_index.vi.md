@@ -18,12 +18,12 @@ pre: " <b> 4.2. </b> "
 
 ### Danh Sách Diễn Giả
 
-- Diễn giả: **Huynh Thai Linh**
-- Diễn giả: **Huynh An Khuong**, **Mai Quoc Anh**, **Nguyen Tran Nguyen Quan**
-- Diễn giả: **Nguyen Thi Quynh Nhu**
-- Diễn giả: **Nghia Tran**
-- Diễn giả: **Tran Minh Quan**
-- Diễn giả: **Khac Uy Pham**
+- Diễn giả: **Huỳnh Thái Linh**
+- Diễn giả: **Huỳnh An Khương**, **Mai Quốc Anh**, **Nguyễn Trần Nguyên Quân**
+- Diễn giả: **Nguyễn Thị Quỳnh Như**
+- Diễn giả: **Nghĩa Trần**
+- Diễn giả: **Trần Minh Quân**
+- Diễn giả: **Khắc Uy Phạm**
 
 ---
 
@@ -96,8 +96,15 @@ Ngoài ra, tinh thần "marathon lập trình" của Hackathon rất phù hợp 
 
 ### Trải Nghiệm Trong Event
 
+Không khí của buổi thứ hai mang đậm màu sắc năng động và lôi cuốn. Sự đan xen giữa các giải pháp kỹ thuật cứng như giả lập Cloud với tinh thần máu lửa của Hackathon, hay góc nhìn mới mẻ từ dự án Tử vi Đại Việt đã làm cho buổi workshop trở nên cực kỳ cân bằng. Nhìn những sản phẩm thực tế được các anh chị xây dựng, cảm thấy được truyền rất nhiều nhiệt huyết để tiếp tục nâng cấp các project cá nhân và dấn thân vào những thử thách mới.
+
+
 #### Một Số Hình Ảnh Khi Tham Gia Sự Kiện
 
-*Thêm các hình ảnh của bạn tại đây*
+![Bài 1 – Lộ trình học thực chiến: AWS Cloud Quest và Floci](/images/4-Event/Event2/talk1-effective-practical-learning-roadmap.jpg?featherlight=false&width=60pc)
 
-Không khí của buổi thứ hai mang đậm màu sắc năng động và lôi cuốn. Sự đan xen giữa các giải pháp kỹ thuật cứng như giả lập Cloud với tinh thần máu lửa của Hackathon, hay góc nhìn mới mẻ từ dự án Tử vi Đại Việt đã làm cho buổi workshop trở nên cực kỳ cân bằng. Nhìn những sản phẩm thực tế được các anh chị xây dựng, cảm thấy được truyền rất nhiều nhiệt huyết để tiếp tục nâng cấp các project cá nhân và dấn thân vào những thử thách mới.
+![Bài 2 – Hackathon: Xây dựng Prototype trong 24–48 giờ](/images/4-Event/Event2/talk2-hackathon-build-prototype-in-24-48h.jpg?featherlight=false&width=60pc)
+
+![Bài 4 – Tử Vi Đại Việt – Nền tảng AI-powered tử vi trực tuyến](/images/4-Event/Event2/talk4-tu-vi-dai-viet-ai-powered.jpg?featherlight=false&width=60pc)
+
+![Bài 5 – The Hidden Iceberg: DevOps Before Disaster](/images/4-Event/Event2/talk5-hidden-iceberg-devops-before-disaster.jpg?featherlight=false&width=60pc)
