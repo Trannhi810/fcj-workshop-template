@@ -10,7 +10,6 @@ pre : " <b> 5.9. </b> "
 
 Thiết lập đăng nhập, phân quyền người dùng và cổng API cho Frontend giao tiếp với Backend.
 
-
 ---
 
 #### Phần 1: Tạo Cognito User Pool
@@ -27,7 +26,8 @@ Thiết lập đăng nhập, phân quyền người dùng và cổng API cho Fro
 
 **Bước 6:** Ở trang **Configure message delivery**: giữ mặc định (Send email with Cognito). Bấm **Next**.
 
-**Bước 7:** Ở trang **Integrate your app**: 
+**Bước 7:** Ở trang **Integrate your app**:
+
 - User pool name: điền `playwright-user-pool`
 - Mục Initial app client → App type: chọn **Public client**
 - App client name: điền `playwright-app`
@@ -39,6 +39,11 @@ Thiết lập đăng nhập, phân quyền người dùng và cổng API cho Fro
 **Bước 10:** Bấm **Next**, xem lại toàn bộ cấu hình ở trang **Review and create**, bấm **Create user pool**.
 
 ![User Pool playwright-user-pool đã được tạo](/images/5-Workshop/5.9-api-gateway-and-auth/1-user-pool-created.png?featherlight=false&width=90pc)
+
+{{% notice warning %}}
+Ngay sau khi khởi tạo thành công User Pool, bạn hãy copy ID của User Pool này. Sau đó, mở lại thẻ dịch vụ **AWS Lambda**, tìm hàm `playwright-api-backend` (đã tạo ở Mục 5.7). 
+Vào mục **Configuration -> Environment variables**, nhấn **Edit** và dán ID thật vào biến `COGNITO_USER_POOL_ID`. Nếu bỏ qua bước này, API Backend sẽ trả về lỗi xác thực 401.
+{{% /notice %}}
 
 ---
 
@@ -110,83 +115,87 @@ Thiết lập đăng nhập, phân quyền người dùng và cổng API cho Fro
 ---
 
 #### Phần 5: Tạo API Gateway
- 
+
 **Bước 1:** Tại thanh tìm kiếm AWS Console, gõ `API Gateway`, chọn **API Gateway**.
- 
+
 **Bước 2:** Menu bên trái bấm **APIs** → bấm nút cam **Create API**.
- 
+
 **Bước 3:** Ở mục **HTTP API**, bấm **Build** (không chọn REST API — HTTP API đơn giản hơn và đủ dùng cho workshop này).
 ![Chọn HTTP API để Build](/images/5-Workshop/5.9-api-gateway-and-auth/5.3-api-gateway-http-build.png?featherlight=false&width=90pc)
 **Bước 4:** Ở trang **Create and configure integrations**: bấm **Add integration** → chọn **Lambda**.
- 
+
 **Bước 5:** Ở dropdown Lambda function, chọn `playwright-api-backend`. Đặt **API name** = `playwright-api`. Bấm **Next**.
 ![Chọn Lambda integration và đặt tên API](/images/5-Workshop/5.9-api-gateway-and-auth/5.5-api-integration-lambda.png?featherlight=false&width=90pc)
 **Bước 6:** Ở trang **Configure routes** (optional): Method chọn **POST**, Resource path điền `/trigger`, Integration target giữ nguyên `playwright-api-backend (Lambda)`. Bấm **Next**.
- 
+
 **Bước 7:** Ở trang **Define stages** (optional): giữ mặc định Stage name = `$default`, Auto-deploy = **enabled**. Bấm **Next**.
 ![Cấu hình stage $default với Auto-deploy](/images/5-Workshop/5.9-api-gateway-and-auth/5.7-api-stages-default.png?featherlight=false&width=90pc)
 **Bước 8:** Ở trang **Review and create**, kiểm tra lại đúng 3 mục: **API name and integrations** (playwright-api, playwright-api-backend), **Routes** (POST /trigger → playwright-api-backend), **Stages** ($default, Auto-deploy: enabled). Bấm **Create**.
- 
+
 ![Review and create trước khi tạo API](/images/5-Workshop/5.9-api-gateway-and-auth/7a-review-create-api.png?featherlight=false&width=90pc)
- 
+
 **Bước 9:** Xác nhận thông báo **"Successfully created API playwright-api (8bsb7jbhu7)"** — ID API tự sinh sẽ khác của bạn.
- 
+
 ![API playwright-api đã được tạo thành công](/images/5-Workshop/5.9-api-gateway-and-auth/7b-api-created.png?featherlight=false&width=90pc)
- 
+
 ---
- 
+
 #### Phần 6: Tạo Authorizer và gắn vào Route
- 
+
 **Bước 1:** Vào API `playwright-api` vừa tạo, menu bên trái (mục **Develop**) bấm **Authorization**.
- 
+
 **Bước 2:** Ở tab **Manage authorizers**, bấm nút **Create**.
- 
+
 **Bước 3:** Authorizer type: chọn **JWT**.
- 
+
 **Bước 4:** Name: đặt tên `cognito-authorizer`.
- 
+
 **Bước 5:** Identity source: điền `$request.header.Authorization`.
- 
+
 **Bước 6:** Issuer URL: điền `https://cognito-idp.ap-southeast-1.amazonaws.com/<user-pool-id>` (thay `<user-pool-id>` bằng ID thật, ví dụ `ap-southeast-1_DXMd3Q6ee` — xem ở Cognito Console → User pool → Overview).
- 
+
 **Bước 7:** Audience: điền tên hoặc ID App Client, ví dụ `playwright-app`.
- 
+
 **Bước 8:** Bấm **Create**, xác nhận thông báo **"Successfully created authorizer 'cognito-authorizer'"**.
- 
+
 ![Authorizer cognito-authorizer đã được tạo](/images/5-Workshop/5.9-api-gateway-and-auth/8a-authorizer-created.png?featherlight=false&width=90pc)
- 
+
 **Bước 9:** Chuyển sang tab **Attach authorizers to routes**.
- 
+
 **Bước 10:** Ở khung **Routes for playwright-api**, mở mục `/trigger`, chọn route **POST**.
- 
+
 **Bước 11:** Ở khung bên phải **Authorizer for route POST /trigger**, chọn `cognito-authorizer`, xác nhận route hiển thị badge **JWT Auth** màu xanh.
- 
+
 ![Route POST /trigger đã gắn JWT Auth](/images/5-Workshop/5.9-api-gateway-and-auth/8b-route-jwt-attached.png?featherlight=false&width=90pc)
- 
+
 *(Ghi chú: Khung bên phải sẽ hiển thị lại đầy đủ Identity source, Issuer, Audience vừa cấu hình — dùng để kiểm tra nhanh nếu sau này gặp lỗi 401.)*
- 
+
 ---
- 
+
 #### Phần 7: Deploy API và lấy Invoke URL
- 
+
 **Bước 1:** Menu bên trái (mục **Deploy**) bấm **Stages**.
- 
+
 **Bước 2:** Bấm nút cam **Deploy** ở góc trên phải, chọn stage `$default`, bấm **Deploy**.
- 
+
 **Bước 3:** Ở khung **Stage details**, copy **Invoke URL**, ví dụ dạng `https://8bsb7jbhu7.execute-api.ap-southeast-1.amazonaws.com` — dùng cho mục 5.10 (Frontend).
- 
+
 ![Stage $default với Invoke URL](/images/5-Workshop/5.9-api-gateway-and-auth/9-stage-invoke-url.png?featherlight=false&width=90pc)
- 
+
 ---
- 
+
 #### Kiểm tra
- 
+
 - Test thử API bằng Postman hoặc curl kèm JWT token:
+
 ```bash
 curl -X POST <invoke-url>/trigger -H "Authorization: Bearer <JWT>" -d '{"target_url":"https://example.com"}'
 ```
+
 → phải nhận về response đúng, không lỗi 401/403.
+
 - Nếu bị lỗi 401 dù token hợp lệ, kiểm tra lại 2 giá trị ở Authorizer: **Issuer** phải đúng dạng `https://cognito-idp.ap-southeast-1.amazonaws.com/<user-pool-id>`, và **Audience** phải đúng App Client — sai 1 trong 2 sẽ luôn trả 401.
+
 ---
 
 Tiếp theo, chúng ta sẽ chuyển sang **[5.10. Frontend](../5.10-frontend/)** để triển khai Dashboard UI lên S3 và CloudFront.

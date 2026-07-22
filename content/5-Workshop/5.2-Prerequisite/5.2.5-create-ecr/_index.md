@@ -13,7 +13,7 @@ In this section, we will create a private repository on **Amazon Elastic Contain
 Repository information:
 
 | Property | Value |
-|---|---|
+| --- | --- |
 | AWS Region | `ap-southeast-1` |
 | Visibility | `Private` |
 | Repository name | `playwright-runner` |
@@ -127,3 +127,10 @@ The repository URI is in the form:
 ```
 
 This URI will be used when creating the ECS task definition for the Playwright Runner.
+
+{{% notice info %}}
+**Playwright Source Code (GitHub)**
+
+The test source code and `Dockerfile` to build the image for this ECR are ready. Please clone the following repository to your machine for use in section 5.5:
+[https://github.com/VanPhuc-027/playwright-runner.git](https://github.com/VanPhuc-027/playwright-runner.git)
+{{% /notice %}}

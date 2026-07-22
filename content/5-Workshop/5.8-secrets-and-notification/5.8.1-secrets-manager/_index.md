@@ -79,7 +79,7 @@ Never expose your real API Key in screenshots or public repositories. Blur or hi
 Enter the following information:
 
 | Property | Value |
-|------------|------------------------------|
+| ------------ | ------------------------------ |
 | Secret name | `playwright/openai-api-key` |
 | Description | AI API Key for Playwright Lambda |
 
@@ -110,7 +110,7 @@ Review the configuration.
 Verify:
 
 | Property | Value |
-|------|------|
+| ------ | ------ |
 | Secret Type | Other type of secret |
 | Secret Name | playwright/openai-api-key |
 | Encryption Key | aws/secretsmanager |

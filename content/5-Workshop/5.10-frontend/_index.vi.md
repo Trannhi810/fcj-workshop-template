@@ -12,7 +12,6 @@ pre : " <b> 5.10. </b> "
 
 Đưa giao diện Dashboard lên S3 và phân phối qua CloudFront.
 
-
 ---
 
 #### Phần 1: Cập nhật cấu hình và build Frontend
@@ -20,6 +19,7 @@ pre : " <b> 5.10. </b> "
 **Bước 1:** Mở source code React (Dashboard, đăng nhập, lịch sử test, xem báo cáo) trong VS Code (hoặc IDE tương đương).
 
 **Bước 2:** Mở file cấu hình (ví dụ `src/config.js`), cập nhật:
+
 ```js
 // ===== CẤU HÌNH AWS =====
 // Cập nhật các giá trị này sau khi deploy lên AWS
@@ -32,9 +32,11 @@ export const COGNITO_CONFIG = {
   clientId: '492jkd32vd241c2tuv1v160g4o',
 }
 ```
+
 Trong đó `API_BASE_URL` là **Invoke URL** lấy ở mục 5.9, `userPoolId` và `clientId` lấy ở Cognito Console → User pool → App integration.
 
 **Bước 3:** Kiểm tra các endpoint API bên dưới đã tự ghép đúng từ `API_BASE_URL`:
+
 ```js
 // Các endpoint API
 export const API_ENDPOINTS = {
@@ -57,6 +59,7 @@ export const API_ENDPOINTS = {
 ![Cấu hình config.js đã cập nhật Invoke URL và Cognito](/images/5-Workshop/5.10-frontend/1-config-js-updated.png?featherlight=false&width=90pc)
 
 **Bước 4:** Mở Terminal trong VS Code (hoặc terminal riêng), `cd` vào thư mục project Frontend, chạy lệnh:
+
 ```bash
 npm run build
 ```
