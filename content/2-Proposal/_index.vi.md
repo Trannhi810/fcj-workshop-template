@@ -96,7 +96,7 @@ Giai đoạn tự học của mỗi thành viên trong nhóm, lộ trình học 
  * Lưu trữ & dữ liệu: Amazon S3, Amazon DynamoDB, Amazon CloudFront.
  * Giám sát & xác thực người dùng: Amazon CloudWatch, Amazon Cognito.
 
-**Giai đoạn 2: Triền khai**
+### Giai đoạn 2: Triển khai
 | Tuần | Nội dung |
 | :--- | :--- |
 | 9 | Họp bàn và cùng đề xuất đề tài kiểm thử tự động bằng playwright, cùng nhau đánh giá tính khả thi và đưa ra hướng phát triển phù hợp.Sau khi chốt được đề tài thì lên kế hoạch phân chia công việc và phát thảo sơ cơ bản sơ đồ kiến trúc. |
