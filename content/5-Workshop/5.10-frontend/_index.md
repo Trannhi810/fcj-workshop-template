@@ -124,11 +124,15 @@ npm run build
 
 ![Review and create distribution](/images/5-Workshop/5.10-frontend/4.5-cloudfront-review-create.png?featherlight=false&width=90pc)
 
-**Step 6 (Update S3 Bucket Policy):** After creation, CloudFront shows a yellow banner (**"The S3 bucket policy needs to be updated"**) → Click **Copy policy**.
+**Step 6 (Configure Default Root Object):** After creation, on the Distribution overview page, scroll down to the **Settings** section → Click **Edit**.
 
-![Banner to update S3 Bucket Policy](/images/5-Workshop/5.10-frontend/4.8-cloudfront-update-s3-policy.png?featherlight=false&width=90pc)
+![Distribution overview page, scroll down to Settings](/images/5-Workshop/5.10-frontend/4.6.1.png?featherlight=false&width=90pc)
 
-**Step 7:** Open a new tab, go back to the **S3 bucket** (`playwright-webui-xxx`) → **Permissions** tab → Scroll down to **Bucket policy** and click **Edit** → Paste the copied policy → Click **Save changes**.
+In the **Default root object** field, enter `index.html`. Scroll to the bottom of the page → Click **Save changes**.
+
+![Enter index.html in Default root object and Save changes](/images/5-Workshop/5.10-frontend/4.6.2.png?featherlight=false&width=90pc)
+
+**Step 7 (Update S3 Bucket Policy):** CloudFront will show a yellow banner **"The S3 bucket policy needs to be updated"** → Click **Copy policy** → Open a new tab, go to the **S3 bucket** (`playwright-webui-xxx`) → **Permissions** tab → Scroll down to **Bucket policy** and click **Edit** → Paste the copied policy → Click **Save changes**.
 
 > 💡 **Note:** This grants CloudFront permission to read content from S3, while preventing external users from directly accessing S3 via public links (AWS security best practice).
 

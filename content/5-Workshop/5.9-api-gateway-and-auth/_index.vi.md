@@ -81,6 +81,8 @@ Thiết lập đăng nhập, phân quyền người dùng và cổng API cho Fro
 ![Chọn HTTP API để Build](/images/5-Workshop/5.9-api-gateway-and-auth/5.3-api-gateway-http-build.png?featherlight=false&width=90pc)
 
 **Bước 3:** Đặt tên API là `playwright-api`. Bấm **Next** cho đến màn hình Review rồi bấm **Create**.
+![Tao API playwright-api](/images/5-Workshop/5.9-api-gateway-and-auth/5.5-api-integration-lambda.png?featherlight=false&width=90pc)
+
 ![API playwright-api đã được tạo thành công](/images/5-Workshop/5.9-api-gateway-and-auth/7b-api-created.png?featherlight=false&width=90pc)
 
 **Bước 4:** Cấu hình CORS (Để Frontend ở domain khác gọi được API):
@@ -90,22 +92,46 @@ Thiết lập đăng nhập, phân quyền người dùng và cổng API cho Fro
 - Configure **Access-Control-Allow-Methods**: Chọn `*` (hoặc GET, POST, PUT, DELETE, OPTIONS).
 - Bấm **Save**.
 
+![Cấu hình CORS trong API Gateway](/images/5-Workshop/5.9-api-gateway-and-auth/3.4.CORS.png?featherlight=false&width=90pc)
+
 **Bước 5:** Thêm Routes và Integration (Kết nối Lambda):
 - Ở menu bên trái, chọn **Routes** -> Bấm **Create**.
-- Thêm các Route tương ứng với Frontend cần (ví dụ: `POST /trigger`, `GET /test-runs`, `GET /stats`, v.v.).
+- Thêm các Route tương ứng với Frontend:
+  - **Test**: `POST /trigger` · `GET /test-runs` · `GET /test-runs/{id}` · `GET /stats` · `GET /test-suites`
+  - **Schedule**: `GET /schedules` · `POST /schedules` · `DELETE /schedules/{id}`
+  - **Config & Users**: `GET /email-config` · `POST /email-config` · `GET /users` · `GET /audit-logs`
+  - **Report**: `GET /reports` · `GET /AI-insights`
 - Chuyển sang menu **Integrations**, chọn từng Route vừa tạo -> Bấm **Attach integration** -> Chọn **AWS Lambda** -> Chọn các hàm Lambda đã tạo ở bài 5.7 tương ứng -> Bấm **Create**.
-![Chọn Lambda integration](/images/5-Workshop/5.9-api-gateway-and-auth/5.5-api-integration-lambda.png?featherlight=false&width=90pc)
+  
+![Danh sách Routes đã tạo trong API Gateway](/images/5-Workshop/5.9-api-gateway-and-auth/3.5.Routes.png?featherlight=false&width=90pc)
+
+
 
 **Bước 6:** Cấu hình Cognito Authorizer (Bảo mật API):
-- Ở menu bên trái, chọn **Authorization** -> Bấm **Create and attach an authorizer**.
-- Chọn Route cần bảo mật.
-- Authorizer type: Chọn **JWT**.
-- Tên Authorizer: `CognitoAuth`.
-- Issuer URL: Nhập theo định dạng `https://cognito-idp.<region>.amazonaws.com/<User_Pool_ID>` (thay bằng Region và User Pool ID bạn vừa lấy ở Phần 1).
-- Audience: Nhập **Client ID** lấy ở Phần 1.
-- Bấm **Create and attach**.
-![Authorizer cognito-authorizer đã được tạo](/images/5-Workshop/5.9-api-gateway-and-auth/8a-authorizer-created.png?featherlight=false&width=90pc)
-![Route đã gắn JWT Auth](/images/5-Workshop/5.9-api-gateway-and-auth/8b-route-jwt-attached.png?featherlight=false&width=90pc)
+
+**Vào mục Authorization:**
+- Ở menu bên trái dưới mục **Develop**, chọn **Authorization**.
+
+**Tạo Authorizer:**
+- Nhấp sang tab **Manage authorizers** (ngay bên cạnh tab Attach authorizers to routes) → Nhấp nút **Create**.
+- Điền thông tin cấu hình:
+  - **Authorizer type**: Chọn `JWT`.
+  - **Name**: Điền `cognito-authorizer`.
+  - **Identity source**: Điền `$request.header.Authorization` (AWS tự điền sẵn).
+  - **Issuer URL**: Nhập `https://cognito-idp.<region>.amazonaws.com/<User_Pool_ID>`
+  - **Audience**: Nhấp **Add audience** rồi nhập App Client ID lấy ở Phần 1.
+ ![Mục Authorization trong menu bên trái](/images/5-Workshop/5.9-api-gateway-and-auth/2.6%20taoAPIbaomat.png?featherlight=false&width=90pc)
+
+- Nhấp **Create** để hoàn tất.
+
+![Authorizer CognitoAuth đã được tạo](/images/5-Workshop/5.9-api-gateway-and-auth/8a-authorizer-created.png?featherlight=false&width=90pc)
+
+**Gắn Authorizer vào các Routes:**
+- Chuyển lại sang tab **Attach authorizers to routes**.
+- Chọn các Route cần bảo mật (như `/trigger`, `/test-runs`,...).
+- Tại ô **Select authorizer**, chọn `cognito-authorizer` vừa tạo → Nhấp **Attach authorizer**.
+
+![Route đã gắn JWT Authorizer](/images/5-Workshop/5.9-api-gateway-and-auth/8b-route-jwt-attached.png?featherlight=false&width=90pc)
 
 **Bước 7:** Lấy Invoke URL:
 - Trở lại trang tổng quan của HTTP API (mục **Stages** -> chọn stage `$default` hoặc `prod`).
