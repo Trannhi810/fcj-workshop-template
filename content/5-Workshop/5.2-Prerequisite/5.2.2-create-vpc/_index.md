@@ -1,4 +1,4 @@
-﻿---
+---
 title : "Create VPC"
 date : 2026-07-10
 weight : 2
@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 5.2.2. </b> "
 ---
 
-#### 1. Create Virtual Private Cloud (VPC)
+### 1. Create Virtual Private Cloud (VPC)
 
 In this section, we will build the network infrastructure from scratch. The first step is to create an isolated Virtual Private Cloud (VPC).
 
@@ -26,7 +26,7 @@ In this section, we will build the network infrastructure from scratch. The firs
 
 **Step 4:** When the green success notification appears, congratulations, you have successfully created the VPC network frame.
 
-#### 2. Subnet division (Subnets)
+### 2. Subnet division (Subnets)
 
 After creating the VPC, we need to divide it into Subnets. Our system requires at least 1 Public Subnet (for Internet communication) and 1 Private Subnet (to securely run E2E tasks).
 
@@ -50,7 +50,7 @@ The process of creating a Private Subnet is exactly the same as the Public Subne
 - **Availability Zone:** Select `Asia Pacific (Singapore) / apse1-az1 (ap-southeast-1b)` (or any AZ different from the public subnet)
 - **IPv4 subnet CIDR block:** Enter `10.0.2.0/24`
 
-#### 3. Create Internet Gateway (IGW)
+### 3. Create Internet Gateway (IGW)
 
 For the Public Subnet to communicate with the Internet, we need an **Internet Gateway**.
 
@@ -66,7 +66,7 @@ For the Public Subnet to communicate with the Internet, we need an **Internet Ga
 
 ![Attach to VPC](/images/5-Workshop/5.2-Prerequisite/5.2.2-create-vpc/attach-igw.png?featherlight=false&width=90pc)
 
-#### 4. Allocate Elastic IP and Create NAT Gateway
+### 4. Allocate Elastic IP and Create NAT Gateway
 
 The Private Subnet cannot access the Internet directly. To allow resources in the Private Subnet (like ECS Fargate) to download packages or communicate outbound, we need a **NAT Gateway** placed in the Public Subnet, and this NAT Gateway requires a static IP address (**Elastic IP**).
 
@@ -93,7 +93,7 @@ The Private Subnet cannot access the Internet directly. To allow resources in th
 
 ![Create NAT Gateway](/images/5-Workshop/5.2-Prerequisite/5.2.2-create-vpc/create-nat-gw.png?featherlight=false&width=90pc)
 
-#### 5. Configure Route Tables
+### 5. Configure Route Tables
 
 A Route Table acts like a traffic sign, deciding where network traffic should go. We need to configure 2 Route Tables: one for the Public Subnet (routing to the Internet) and one for the Private Subnet (routing to the NAT Gateway).
 
@@ -141,7 +141,7 @@ A Route Table acts like a traffic sign, deciding where network traffic should go
 
 ![Route to NAT Gateway](/images/5-Workshop/5.2-Prerequisite/5.2.2-create-vpc/private-route-nat.png?featherlight=false&width=90pc)
 
-#### 6. Configure Security Groups
+### 6. Configure Security Groups
 
 To allow services inside the VPC to communicate securely, we need to set up Security Groups (SGs). We need 3 SGs: for Lambda, for Fargate, and for VPC Endpoints.
 **Important note on ordering:** You must create the SGs for Lambda and Fargate first, before creating the Endpoint SG, because the Endpoint SG needs to reference the other two in its Inbound rules.
