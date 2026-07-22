@@ -90,22 +90,46 @@ Don't forget to navigate back to the **AWS Lambda** console, open the `playwrigh
 - Configure **Access-Control-Allow-Methods**: Select `*` (or GET, POST, PUT, DELETE, OPTIONS).
 - Click **Save**.
 
+![CORS configuration in API Gateway](/images/5-Workshop/5.9-api-gateway-and-auth/3.4.CORS.png?featherlight=false&width=90pc)
+
 **Step 5:** Add Routes and Integration (Connect to Lambda):
 - In the left-hand menu, select **Routes** -> Click **Create**.
-- Add the corresponding Routes required by the Frontend (e.g., `POST /trigger`, `GET /test-runs`, `GET /stats`, etc.).
+- Add the corresponding Routes required by the Frontend:
+  - **Test**: `POST /trigger` · `GET /test-runs` · `GET /test-runs/{id}` · `GET /stats` · `GET /test-suites`
+  - **Schedule**: `GET /schedules` · `POST /schedules` · `DELETE /schedules/{id}`
+  - **Config & Users**: `GET /email-config` · `POST /email-config` · `GET /users` · `GET /audit-logs`
+  - **Report**: `GET /reports` · `GET /AI-insights`
+
+![Routes list created in API Gateway](/images/5-Workshop/5.9-api-gateway-and-auth/3.5.Routes.png?featherlight=false&width=90pc)
+
 - Switch to the **Integrations** menu, select each Route you just created -> Click **Attach integration** -> Select **AWS Lambda** -> Select the corresponding Lambda functions created in section 5.7 -> Click **Create**.
 ![Select Lambda integration](/images/5-Workshop/5.9-api-gateway-and-auth/5.5-api-integration-lambda.png?featherlight=false&width=90pc)
 
 **Step 6:** Configure Cognito Authorizer (API Security):
-- In the left-hand menu, select **Authorization** -> Click **Create and attach an authorizer**.
-- Select the Route to secure.
-- Authorizer type: Select **JWT**.
-- Authorizer Name: `CognitoAuth`.
-- Issuer URL: Enter in the format `https://cognito-idp.<region>.amazonaws.com/<User_Pool_ID>` (replace with the Region and User Pool ID you obtained in Part 1).
-- Audience: Enter the **Client ID** obtained in Part 1.
-- Click **Create and attach**.
-![Authorizer cognito-authorizer created](/images/5-Workshop/5.9-api-gateway-and-auth/8a-authorizer-created.png?featherlight=false&width=90pc)
-![Route with JWT Auth attached](/images/5-Workshop/5.9-api-gateway-and-auth/8b-route-jwt-attached.png?featherlight=false&width=90pc)
+
+**Navigate to Authorization:**
+- In the left-hand menu under the **Develop** section, select **Authorization**.
+
+![Authorization section in left menu](/images/5-Workshop/5.9-api-gateway-and-auth/2.6%20taoAPIbaomat.png?featherlight=false&width=90pc)
+
+**Create Authorizer:**
+- Switch to the **Manage authorizers** tab (next to the Attach authorizers to routes tab) → Click **Create**.
+- Fill in the configuration details:
+  - **Authorizer type**: Select `JWT`.
+  - **Name**: Enter `CognitoAuth`.
+  - **Identity source**: Enter `$request.header.Authorization` (AWS auto-fills this).
+  - **Issuer URL**: Enter `https://cognito-idp.<region>.amazonaws.com/<User_Pool_ID>` (e.g., `https://cognito-idp.ap-southeast-1.amazonaws.com/ap-southeast-1_luonEyHpX`).
+  - **Audience**: Click **Add audience** then enter the App Client ID obtained in Part 1 (e.g., `4hfihsrbb685m2kgj20f7ihput`).
+- Click **Create** to complete.
+
+![Authorizer CognitoAuth created](/images/5-Workshop/5.9-api-gateway-and-auth/8a-authorizer-created.png?featherlight=false&width=90pc)
+
+**Attach Authorizer to Routes:**
+- Switch back to the **Attach authorizers to routes** tab.
+- Select the Routes to secure (like `/trigger`, `/test-runs`,...).
+- In the **Select authorizer** dropdown, select `CognitoAuth` just created → Click **Attach authorizer**.
+
+![Route with JWT Authorizer attached](/images/5-Workshop/5.9-api-gateway-and-auth/8b-route-jwt-attached.png?featherlight=false&width=90pc)
 
 **Step 7:** Get Invoke URL:
 - Return to the HTTP API overview page (**Stages** section -> select the `$default` or `prod` stage).
