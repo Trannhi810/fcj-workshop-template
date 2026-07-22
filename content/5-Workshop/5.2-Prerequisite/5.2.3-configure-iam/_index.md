@@ -212,4 +212,9 @@ When creating the ECS task definition later, configure:
 | Task execution role | `playwright-ecs-execution-role` |
 | Task role | `playwright-ecs-task-role` |
 
-The `playwright-postprocessing` Lambda function uses **`playwright-postprocessing-role`** as its execution role (not the shared `playwright-lambda-role`). The remaining Lambda functions (`playwright-api-backend`, `playwright-coordinator`, `playwright-error-handler`) continue to use `playwright-lambda-role`.
+{{% notice info %}}
+**Important note on assigning IAM Roles to Lambda functions:**
+
+- **`playwright-postprocessing` function**: Must use **`playwright-postprocessing-role`** (its dedicated role created in section 2).
+- **All other Lambda functions** (`playwright-api-backend`, `playwright-coordinator`, `playwright-error-handler`): Use the shared **`playwright-lambda-role`** (created in section 1).
+{{% /notice %}}

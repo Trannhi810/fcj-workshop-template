@@ -76,9 +76,7 @@ Tạo thêm một role mới, chọn:
 
 **Step 1 – Select trusted entity:** Chọn **AWS service** làm trusted entity, trong phần **Use case** chọn **Lambda**, rồi nhấn **Next**.
 
-![Chọn trusted entity là Lambda](/images/5-Workshop/5.2-Prerequisite/5.2.3-configure-iam/2a-postprocessing-select-trusted-entity.png?featherlight=false&width=90pc)
-
-**Step 2 – Add permissions:** Tìm kiếm và attach lần lượt các AWS managed policy sau, rồi nhấn **Next**.
+**Step 2 – Add permissions:** Attach các AWS managed policy sau, rồi nhấn **Next**.
 
 | Policy | Mục đích |
 | --- | --- |
@@ -88,7 +86,7 @@ Tạo thêm một role mới, chọn:
 | `AmazonS3FullAccess` | Đọc/ghi báo cáo Playwright trong S3 |
 | `AmazonSESFullAccess` | Gửi email thông báo kết quả kiểm thử |
 
-![Attach policy cho playwright-postprocessing-role](/images/5-Workshop/5.2-Prerequisite/5.2.3-configure-iam/2b-postprocessing-add-permissions.png?featherlight=false&width=90pc)
+![Attach policy cho playwright-postprocessing-role](/images/5-Workshop/5.2-Prerequisite/5.2.3-configure-iam/2b-postprocessing-role-created.jpeg?featherlight=false&width=90pc)
 
 **Step 3 – Name, review, and create:** Đặt tên role:
 
@@ -96,11 +94,7 @@ Tạo thêm một role mới, chọn:
 playwright-postprocessing-role
 ```
 
-![Điền tên playwright-postprocessing-role](/images/5-Workshop/5.2-Prerequisite/5.2.3-configure-iam/2c-postprocessing-name.png?featherlight=false&width=90pc)
-
 Kiểm tra lại phần **Permissions policies** đã có đủ 5 policy ở trên, trust policy có chứa service principal `lambda.amazonaws.com`, sau đó chọn **Create role**.
-
-![Kiểm tra và tạo role](/images/5-Workshop/5.2-Prerequisite/5.2.3-configure-iam/2d-postprocessing-created.png?featherlight=false&width=90pc)
 
 {{% notice note %}}
 Ghi lại ARN của role này (dạng `arn:aws:iam::<account-id>:role/playwright-postprocessing-role`) — sẽ dùng để gắn cho Lambda `playwright-postprocessing` ở mục 5.7, thay vì `playwright-lambda-role`.
@@ -206,4 +200,9 @@ Khi tạo ECS task definition ở bước sau, cấu hình:
 | Task execution role | `playwright-ecs-execution-role` |
 | Task role | `playwright-ecs-task-role` |
 
-Hàm Lambda `playwright-postprocessing` sử dụng **`playwright-postprocessing-role`** làm execution role (không dùng `playwright-lambda-role` dùng chung). Các Lambda còn lại (`playwright-api-backend`, `playwright-coordinator`, `playwright-error-handler`) tiếp tục dùng `playwright-lambda-role`.
+{{% notice info %}}
+**Lưu ý quan trọng về việc gán Role cho Lambda:**
+
+- **Hàm `playwright-postprocessing`**: Bắt buộc dùng **`playwright-postprocessing-role`** (role riêng biệt được tạo ở phần 2).
+- **Các hàm Lambda còn lại** (`playwright-api-backend`, `playwright-coordinator`, `playwright-error-handler`): Sử dụng role chung là **`playwright-lambda-role`** (đã tạo ở phần 1).
+{{% /notice %}}
