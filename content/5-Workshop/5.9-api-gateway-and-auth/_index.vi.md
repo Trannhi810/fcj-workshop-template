@@ -105,8 +105,6 @@ Thiết lập đăng nhập, phân quyền người dùng và cổng API cho Fro
   
 ![Danh sách Routes đã tạo trong API Gateway](/images/5-Workshop/5.9-api-gateway-and-auth/3.5.Routes.png?featherlight=false&width=90pc)
 
-
-
 **Bước 6:** Cấu hình Cognito Authorizer (Bảo mật API):
 
 **Vào mục Authorization:**

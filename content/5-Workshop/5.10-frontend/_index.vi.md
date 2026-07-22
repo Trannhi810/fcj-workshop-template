@@ -103,11 +103,12 @@ npm run build
 #### Phần 4: Tạo CloudFront Distribution
 
 **Bước 1:** Tại thanh tìm kiếm AWS Console, gõ `CloudFront` → Chọn **CloudFront** → Bấm nút **Create distribution**. Ở **Step 1: Choose a plan**, đảm bảo đã tích chọn gói **Free ($0/month)** (mặc định đã được chọn sẵn) → Cuộn xuống góc dưới bên phải và bấm **Next**.
+
 ![Chọn gói Free](/images/5-Workshop/5.10-frontend/4.2-cloudfront-choose-plan.png?featherlight=false&width=90pc)
 
 **Bước 2 (Get started):** Tại mục **Distribution options**, điền tên phân phối vào ô **Distribution name** (ví dụ: `playwright-cloudfront-123`), sau đó cuộn xuống cuối trang và bấm **Next**.
-![Mở CloudFront Console](/images/5-Workshop/5.10-frontend/4.1-cloudfront-console.png?featherlight=false&width=90pc)
 
+![Mở CloudFront Console](/images/5-Workshop/5.10-frontend/4.1-cloudfront-console.png?featherlight=false&width=90pc)
 
 **Bước 3 (Specify origin):** Đây chính là bước cấu hình S3 Bucket:
 - **Origin domain**: Bấm vào ô tìm kiếm và chọn bucket `playwright-webui-xxx.s3.ap-southeast-1.amazonaws.com`.

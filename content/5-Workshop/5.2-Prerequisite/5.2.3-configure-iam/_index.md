@@ -82,11 +82,14 @@ Create another new role and select:
 
 | Policy | Purpose |
 | --- | --- |
-| `CloudWatchLogsFullAccess` | Write function execution logs |
 | `AmazonDynamoDBFullAccess` | Update test result status in DynamoDB |
-| `SecretsManagerReadWrite` | Read the AI API Key from Secrets Manager |
+| `AmazonECS_FullAccess` | Allows Lambda to start and monitor ECS tasks |
 | `AmazonS3FullAccess` | Read/write Playwright reports in S3 |
 | `AmazonSESFullAccess` | Send test result notification emails |
+| `AmazonSQSFullAccess` | Allows Lambda to send/receive messages from SQS queues |
+| `AWSLambdaVPCAccessExecutionRole` | Allows Lambda to connect to VPC |
+| `CloudWatchLogsFullAccess` | Write function execution logs |
+| `SecretsManagerReadWrite` | Read the AI API Key from Secrets Manager |
 
 ![Attach policies for playwright-postprocessing-role](/images/5-Workshop/5.2-Prerequisite/5.2.3-configure-iam/2b-postprocessing-add-permissions.png?featherlight=false&width=90pc)
 
@@ -98,7 +101,7 @@ playwright-postprocessing-role
 
 ![Enter name playwright-postprocessing-role](/images/5-Workshop/5.2-Prerequisite/5.2.3-configure-iam/2c-postprocessing-name.png?featherlight=false&width=90pc)
 
-Verify that the **Permissions policies** section shows all 5 policies above, and that the trust policy contains the `lambda.amazonaws.com` service principal, then choose **Create role**.
+Verify that the **Permissions policies** section shows all 8 policies above, and that the trust policy contains the `lambda.amazonaws.com` service principal, then choose **Create role**.
 
 ![Verify and create role](/images/5-Workshop/5.2-Prerequisite/5.2.3-configure-iam/2d-postprocessing-created.png?featherlight=false&width=90pc)
 
